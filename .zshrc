@@ -1,8 +1,22 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Exports
 export PS1="%B[%F{cyan}%n%f@%F{green}%m %F{blue}%1~%f] %F{magenta}\$ %b%f"
 export PATH=/home/bicker/.local/bin:$PATH
+
+# Default programs
+export EDITOR='nvim'
+export TERMINAL='st'
+export BROWSER='firefox'
+
+# History
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=~/.zsh_history
+
+# Keybindings
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # Add color to commands
 alias ls='ls --color=auto --group-directories-first'
